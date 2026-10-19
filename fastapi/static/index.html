@@ -1,0 +1,154 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#f7f4e9">
+  <meta name="description" content="Um quiz visual para descobrir festas, sabores e tradições do Sudeste do Brasil.">
+  <title>Brasil em Quiz — Sudeste de muitos jeitos</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800&family=Fraunces:opsz,wght@9..144,600;9..144,700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+  <header class="site-header">
+    <a class="brand" href="#inicio" aria-label="Brasil em Quiz, início">
+      <span class="brand-symbol">b<span>!</span></span>
+      <span class="brand-name">brasil<span>em quiz</span></span>
+    </a>
+    <nav class="main-nav" aria-label="Navegação principal">
+      <a href="#quiz">O quiz</a>
+      <a href="#roteiro">Um pouco do Sudeste</a>
+    </nav>
+    <a class="header-link" href="#quiz">Bora descobrir <span>↘</span></a>
+  </header>
+
+  <main id="inicio">
+    <section class="hero">
+      <div class="hero-copy">
+        <p class="kicker"><span></span> QUATRO ESTADOS, MUITOS BRASIS</p>
+        <h1>Sudeste.<br>Impossível<br>ser <em>uma coisa só.</em></h1>
+        <p class="hero-description">Tem festa na rua, café passado na hora, panela no fogo e história em cada esquina. Quanto do Sudeste você conhece?</p>
+        <a class="button button-coral" href="#quiz">Descobrir no quiz <span>→</span></a>
+        <div class="hero-meta"><span class="meta-star">✳</span> 5 perguntas · fotos reais · curiosidades pelo caminho</div>
+      </div>
+      <figure class="hero-photo-card">
+        <img src="https://commons.wikimedia.org/wiki/Special:FilePath/FestaJunina.jpg?width=1400" alt="Bandeirinhas e decoração de uma festa junina brasileira">
+        <span class="photo-sticker">CULTURA<br>QUE VIVE<br><b>NA GENTE</b></span>
+        <figcaption><span>Festa Junina · Brasil</span><a href="https://commons.wikimedia.org/wiki/File:FestaJunina.jpg" target="_blank" rel="noopener noreferrer">Foto: Wikimedia Commons · CC BY-SA 2.0 ↗</a></figcaption>
+        <span class="photo-sun" aria-hidden="true">✳</span>
+      </figure>
+      <span class="hero-side-label" aria-hidden="true">MG · ES · RJ · SP</span>
+    </section>
+
+    <section class="state-ribbon" aria-label="Estados da região Sudeste">
+      <span class="ribbon-label">UM ROLÊ POR</span>
+      <span><i class="state-dot dot-mg"></i> Minas Gerais</span>
+      <span><i class="state-dot dot-es"></i> Espírito Santo</span>
+      <span><i class="state-dot dot-rj"></i> Rio de Janeiro</span>
+      <span><i class="state-dot dot-sp"></i> São Paulo</span>
+    </section>
+
+    <section id="quiz" class="quiz-section">
+      <div class="section-intro">
+        <div>
+          <p class="kicker kicker-green"><span></span> QUIZ CULTURAL · SUDESTE DO BRASIL</p>
+          <h2>Prepara a curiosidade.<br><em>O passeio começa agora.</em></h2>
+        </div>
+        <p class="section-description">Responda no seu ritmo. Cada pergunta vem com uma imagem e uma história para levar com você.</p>
+      </div>
+
+      <div class="quiz-card" id="quiz-card">
+        <div class="quiz-cover" id="quiz-cover">
+          <img src="https://commons.wikimedia.org/wiki/Special:FilePath/Moqueca_capixaba.jpg?width=1200" alt="Moqueca capixaba em panela de barro">
+          <div class="cover-overlay"></div>
+          <span class="cover-label">SEU GUIA<br>DE BOLSO</span>
+          <div class="cover-title">UM SUDESTE<br><em>de histórias</em></div>
+          <span class="cover-number">01 — 05</span>
+        </div>
+        <div class="quiz-content">
+          <div class="quiz-intro" id="quiz-intro">
+            <p class="quiz-eyebrow">UM QUIZ PRA JOGAR E APRENDER</p>
+            <h3>Do pão de queijo<br>ao samba-enredo.</h3>
+            <p class="quiz-lede">Cinco perguntas rápidas sobre as culturas que fazem o Sudeste pulsar.</p>
+            <button class="button button-green" id="start-quiz">Começar <span>→</span></button>
+            <span class="duration">◷ &nbsp;Leva menos de 2 min</span>
+          </div>
+          <div class="quiz-play" id="quiz-play" hidden>
+            <div class="quiz-progress-row"><span class="quiz-category" id="question-category"></span><span class="question-count" id="question-count"></span></div>
+            <div class="progress-track"><div class="progress-fill" id="progress-fill"></div></div>
+            <h3 class="question-title" id="question-title" tabindex="-1"></h3>
+            <figure class="question-image" id="question-image">
+              <img src="" alt="">
+              <figcaption><a href="" target="_blank" rel="noopener noreferrer"></a></figcaption>
+            </figure>
+            <div class="answers" id="answers"></div>
+            <p class="answer-feedback" id="answer-feedback" aria-live="polite"></p>
+            <span class="quiz-hint">Escolha uma alternativa para ver a curiosidade</span>
+          </div>
+          <div class="quiz-result" id="quiz-result" hidden aria-live="polite"></div>
+        </div>
+      </div>
+      <div class="quiz-decoration" aria-hidden="true">✳</div>
+    </section>
+
+    <section id="roteiro" class="culture-section">
+      <div class="culture-heading">
+        <p class="kicker"><span></span> UM GOSTINHO DE CADA CANTO</p>
+        <h2>Tem muita história<br>nessa região.</h2>
+        <p class="culture-subtitle">E ela aparece na comida, na música e nas tradições que passam de geração em geração.</p>
+      </div>
+      <div class="culture-grid">
+        <article class="culture-card card-food">
+          <a class="culture-image" href="https://commons.wikimedia.org/wiki/File:Pao_de_queijo_com_cafe.jpg" target="_blank" rel="noopener noreferrer" aria-label="Ver fonte da foto de pão de queijo">
+            <img src="https://commons.wikimedia.org/wiki/Special:FilePath/Pao_de_queijo_com_cafe.jpg?width=900" alt="Pão de queijo servido com café">
+            <span class="image-tag">MINAS GERAIS</span>
+            <span class="image-credit">nwerneck · CC BY-SA 3.0</span>
+          </a>
+          <div class="culture-card-copy"><span>01 / SABOR DE CASA</span><h3>Café coado,<br>pão de queijo quentinho.</h3><p>Tem cheiro que já conta de onde vem.</p></div>
+        </article>
+        <article class="culture-card card-pan">
+          <a class="culture-image" href="https://commons.wikimedia.org/wiki/File:Moqueca_capixaba.jpg" target="_blank" rel="noopener noreferrer" aria-label="Ver fonte da foto de moqueca capixaba">
+            <img src="https://commons.wikimedia.org/wiki/Special:FilePath/Moqueca_capixaba.jpg?width=900" alt="Moqueca capixaba preparada com peixe e temperos">
+            <span class="image-tag">ESPÍRITO SANTO</span>
+            <span class="image-credit">Jsilvares · CC BY-SA 4.0</span>
+          </a>
+          <div class="culture-card-copy"><span>02 / SABERES À MESA</span><h3>Moqueca capixaba.<br>Panela de barro.</h3><p>Receita e tradição que caminham juntas.</p></div>
+        </article>
+        <article class="culture-card card-rhythm">
+          <a class="culture-image" href="https://commons.wikimedia.org/wiki/File:Samba_schools_parade_carnival_2009_at_rio_de_janeiro-brazil_(53254087980).jpg" target="_blank" rel="noopener noreferrer" aria-label="Ver fonte da foto do desfile de samba no Rio">
+            <img src="https://commons.wikimedia.org/wiki/Special:FilePath/Samba_schools_parade_carnival_2009_at_rio_de_janeiro-brazil_(53254087980).jpg?width=900" alt="Desfile de escola de samba no Carnaval do Rio de Janeiro">
+            <span class="image-tag">RIO DE JANEIRO</span>
+            <span class="image-credit">Wim Gevonden · CC BY-SA 2.0</span>
+          </a>
+          <div class="culture-card-copy"><span>03 / RITMO DE MULTIDÃO</span><h3>Tamborim chama.<br>O corpo responde.</h3><p>Carnaval é criação, comunidade e avenida.</p></div>
+        </article>
+        <article class="culture-card card-tradition">
+          <a class="culture-image" href="https://commons.wikimedia.org/wiki/File:Congado_in_Minas_Gerais_1876.jpg" target="_blank" rel="noopener noreferrer" aria-label="Ver fonte do registro histórico do Congado">
+            <img src="https://commons.wikimedia.org/wiki/Special:FilePath/Congado_in_Minas_Gerais_1876.jpg?width=900" alt="Registro histórico de uma celebração do Congado em Minas Gerais, em 1876">
+            <span class="image-tag">TRADIÇÃO MINEIRA</span>
+            <span class="image-credit">Rui Santos · Domínio Público</span>
+          </a>
+          <div class="culture-card-copy"><span>04 / MEMÓRIA VIVA</span><h3>Congado: fé,<br>dança e tambor.</h3><p>Uma tradição afro-brasileira em movimento.</p></div>
+        </article>
+      </div>
+    </section>
+
+    <section class="closing-note">
+      <span class="closing-flower" aria-hidden="true">✳</span>
+      <p class="kicker kicker-light"><span></span> BRASIL EM QUIZ</p>
+      <h2>O Sudeste não cabe<br>numa resposta só.</h2>
+      <a href="#quiz" class="closing-link">Jogar de novo <span>↗</span></a>
+      <span class="closing-scribble" aria-hidden="true">feito de<br>muitos jeitos</span>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <a class="brand" href="#inicio"><span class="brand-symbol">b<span>!</span></span><span class="brand-name">brasil<span>em quiz</span></span></a>
+    <span>Um projeto sobre as culturas do Sudeste do Brasil</span>
+    <span class="footer-heart">feito com carinho <b>♥</b></span>
+  </footer>
+  <script src="/static/script.js"></script>
+</body>
+</html>
